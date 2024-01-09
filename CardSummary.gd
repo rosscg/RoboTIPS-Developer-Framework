@@ -23,8 +23,8 @@ func set_ans(ans):
 	set_card($text_question.text, $Mouseover/MarginContainer/VBoxContainer/Label2.text, ans)
 
 
-
 func _on_ZoomButton_button_up():
+	get_parent().get_parent().get_node('tutorial').visible = false
 	get_parent().get_parent().get_parent().zoom_To_Card($text_question.text)
 
 

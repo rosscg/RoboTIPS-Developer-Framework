@@ -36,6 +36,7 @@ func _physics_process(delta):
 
 
 func _on_BtnDraw_button_up():
+	get_parent().get_parent().get_node("tutorial").visible = false
 	state = MoveDrawnCardToHand
 	#get_node("/root/Node2D/CardScene/pos_card").position
 	#get_parent().visible = false

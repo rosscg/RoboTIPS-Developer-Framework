@@ -12,7 +12,7 @@
 font_path = "res://assets/theme/alegreya-sans.medium.ttf"
 
 [sub_resource type="DynamicFont" id=5]
-size = 28
+size = 22
 use_filter = true
 font_data = SubResource( 1 )
 
@@ -53,77 +53,77 @@ custom_constants/margin_bottom = 0
 [node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 29.0
 margin_right = 250.0
-margin_bottom = 64.0
+margin_bottom = 56.0
 
 [node name="LeftGap" type="MarginContainer" parent="VBoxContainer/TopBar"]
-margin_right = 25.0
-margin_bottom = 35.0
-rect_min_size = Vector2( 25, 25 )
+margin_right = 10.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 10, 25 )
 
 [node name="Title" type="MarginContainer" parent="VBoxContainer/TopBar"]
-margin_left = 29.0
-margin_right = 221.0
-margin_bottom = 35.0
+margin_left = 14.0
+margin_right = 236.0
+margin_bottom = 27.0
 size_flags_horizontal = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/TopBar/Title"]
 visible = false
-margin_right = 192.0
-margin_bottom = 35.0
+margin_right = 222.0
+margin_bottom = 27.0
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TopBar/Title"]
-margin_right = 192.0
-margin_bottom = 35.0
+margin_right = 222.0
+margin_bottom = 27.0
 
 [node name="Label" type="Label" parent="VBoxContainer/TopBar/Title/CenterContainer"]
-margin_left = 56.0
-margin_right = 135.0
-margin_bottom = 35.0
+margin_left = 80.0
+margin_right = 142.0
+margin_bottom = 27.0
 custom_fonts/font = SubResource( 5 )
 text = "Privacy"
 align = 1
 
 [node name="RightGap" type="MarginContainer" parent="VBoxContainer/TopBar"]
-margin_left = 225.0
+margin_left = 240.0
 margin_right = 250.0
-margin_bottom = 35.0
-rect_min_size = Vector2( 25, 25 )
+margin_bottom = 27.0
+rect_min_size = Vector2( 10, 25 )
 
 [node name="TitleGap" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 68.0
+margin_top = 60.0
 margin_right = 250.0
-margin_bottom = 78.0
+margin_bottom = 70.0
 rect_min_size = Vector2( 25, 10 )
 
 [node name="TextBar" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 82.0
+margin_top = 74.0
 margin_right = 250.0
-margin_bottom = 131.0
+margin_bottom = 117.0
 
 [node name="LeftGap" type="MarginContainer" parent="VBoxContainer/TextBar"]
 margin_right = 20.0
-margin_bottom = 49.0
+margin_bottom = 43.0
 rect_min_size = Vector2( 20, 25 )
 
 [node name="Title" type="MarginContainer" parent="VBoxContainer/TextBar"]
 margin_left = 24.0
 margin_right = 226.0
-margin_bottom = 49.0
+margin_bottom = 43.0
 size_flags_horizontal = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/TextBar/Title"]
 visible = false
 margin_right = 202.0
-margin_bottom = 49.0
+margin_bottom = 43.0
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TextBar/Title"]
 margin_right = 202.0
-margin_bottom = 49.0
+margin_bottom = 43.0
 
 [node name="Label" type="Label" parent="VBoxContainer/TextBar/Title/CenterContainer"]
 margin_left = 1.0
 margin_right = 201.0
-margin_bottom = 49.0
+margin_bottom = 43.0
 rect_min_size = Vector2( 200, 0 )
 custom_fonts/font = ExtResource( 7 )
 text = "Has active consent been given for data collected?"
@@ -132,13 +132,13 @@ autowrap = true
 [node name="RightGap" type="MarginContainer" parent="VBoxContainer/TextBar"]
 margin_left = 230.0
 margin_right = 250.0
-margin_bottom = 49.0
+margin_bottom = 43.0
 rect_min_size = Vector2( 20, 25 )
 
 [node name="BodyGap" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 135.0
+margin_top = 121.0
 margin_right = 250.0
-margin_bottom = 160.0
+margin_bottom = 146.0
 rect_min_size = Vector2( 25, 25 )
 
 [node name="ButtonBar" type="HBoxContainer" parent="VBoxContainer"]
@@ -188,9 +188,9 @@ rect_min_size = Vector2( 5, 25 )
 [node name="Node" type="Node" parent="VBoxContainer/ButtonBar"]
 
 [node name="TextBar2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 164.0
+margin_top = 150.0
 margin_right = 250.0
-margin_bottom = 244.0
+margin_bottom = 230.0
 
 [node name="LeftGap" type="MarginContainer" parent="VBoxContainer/TextBar2"]
 margin_right = 15.0
@@ -212,9 +212,9 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 15, 25 )
 
 [node name="ButtonBar2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 248.0
+margin_top = 234.0
 margin_right = 250.0
-margin_bottom = 273.0
+margin_bottom = 259.0
 
 [node name="LeftGap" type="MarginContainer" parent="VBoxContainer/ButtonBar2"]
 margin_right = 160.0
