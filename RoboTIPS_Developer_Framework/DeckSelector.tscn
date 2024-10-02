@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://DeckSelector.gd" type="Script" id=1]
+[ext_resource path="res://assets/cardback_250_350.png" type="Texture" id=2]
+
+[node name="DeckSelector" type="MarginContainer"]
+margin_right = 250.0
+margin_bottom = 350.0
+rect_scale = Vector2( 0.15, 0.15 )
+script = ExtResource( 1 )
+
+[node name="CardBack" type="Node2D" parent="."]
+
+[node name="BGRect2" type="ColorRect" parent="CardBack"]
+margin_right = 250.0
+margin_bottom = 350.0
+color = Color( 0.0862745, 0.0941176, 0.607843, 1 )
+
+[node name="BtnDraw" type="Button" parent="CardBack"]
+margin_right = 250.0
+margin_bottom = 350.0
+flat = true
+
+[node name="Sprite" type="Sprite" parent="CardBack"]
+texture = ExtResource( 2 )
+centered = false
+
+[connection signal="button_up" from="CardBack/BtnDraw" to="." method="_on_BtnDraw_button_up"]

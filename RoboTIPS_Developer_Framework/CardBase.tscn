@@ -1,0 +1,255 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://CardBase.gd" type="Script" id=1]
+[ext_resource path="res://assets/cardborder.png" type="Texture" id=2]
+[ext_resource path="res://assets/btn_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/btn_3.png" type="Texture" id=4]
+[ext_resource path="res://assets/btn_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/cardback_250_350.png" type="Texture" id=6]
+[ext_resource path="res://simpleTheme.tres" type="Theme" id=7]
+[ext_resource path="res://assets/card_back_done.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/theme/alegreya-sans.medium.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=4]
+TextEdit/colors/completion_background_color = Color( 1, 1, 1, 1 )
+TextEdit/colors/completion_selected_color = Color( 1, 1, 1, 1 )
+
+[node name="CardBase" type="MarginContainer"]
+margin_right = 250.0
+margin_bottom = 350.0
+script = ExtResource( 1 )
+
+[node name="BGRect" type="ColorRect" parent="."]
+margin_right = 250.0
+margin_bottom = 350.0
+color = Color( 0.262745, 0.501961, 0.643137, 1 )
+
+[node name="Border" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 250.0
+margin_bottom = 350.0
+
+[node name="TopGap" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 250.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 25, 25 )
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+
+[node name="TopBar" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 29.0
+margin_right = 250.0
+margin_bottom = 56.0
+
+[node name="LeftGap" type="MarginContainer" parent="VBoxContainer/TopBar"]
+margin_right = 10.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 10, 25 )
+
+[node name="Title" type="MarginContainer" parent="VBoxContainer/TopBar"]
+margin_left = 14.0
+margin_right = 236.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/TopBar/Title"]
+visible = false
+margin_right = 222.0
+margin_bottom = 27.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TopBar/Title"]
+margin_right = 222.0
+margin_bottom = 27.0
+
+[node name="Label" type="Label" parent="VBoxContainer/TopBar/Title/CenterContainer"]
+margin_left = 80.0
+margin_right = 142.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 5 )
+text = "Privacy"
+align = 1
+
+[node name="RightGap" type="MarginContainer" parent="VBoxContainer/TopBar"]
+margin_left = 240.0
+margin_right = 250.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 10, 25 )
+
+[node name="TitleGap" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 60.0
+margin_right = 250.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 25, 10 )
+
+[node name="TextBar" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 74.0
+margin_right = 250.0
+margin_bottom = 117.0
+
+[node name="LeftGap" type="MarginContainer" parent="VBoxContainer/TextBar"]
+margin_right = 20.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 20, 25 )
+
+[node name="Title" type="MarginContainer" parent="VBoxContainer/TextBar"]
+margin_left = 24.0
+margin_right = 226.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/TextBar/Title"]
+visible = false
+margin_right = 202.0
+margin_bottom = 43.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TextBar/Title"]
+margin_right = 202.0
+margin_bottom = 43.0
+
+[node name="Label" type="Label" parent="VBoxContainer/TextBar/Title/CenterContainer"]
+margin_left = 1.0
+margin_right = 201.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 200, 0 )
+theme = ExtResource( 7 )
+text = "Has active consent been given for data collected?"
+autowrap = true
+
+[node name="RightGap" type="MarginContainer" parent="VBoxContainer/TextBar"]
+margin_left = 230.0
+margin_right = 250.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 20, 25 )
+
+[node name="BodyGap" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 121.0
+margin_right = 250.0
+margin_bottom = 146.0
+rect_min_size = Vector2( 25, 25 )
+
+[node name="ButtonBar" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+margin_top = 174.0
+margin_right = 250.0
+margin_bottom = 234.0
+
+[node name="LeftGap" type="MarginContainer" parent="VBoxContainer/ButtonBar"]
+margin_right = 30.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 30, 25 )
+
+[node name="Button1" type="Button" parent="VBoxContainer/ButtonBar"]
+margin_left = 34.0
+margin_right = 94.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+
+[node name="Button2" type="Button" parent="VBoxContainer/ButtonBar"]
+margin_left = 98.0
+margin_right = 158.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+
+[node name="Button3" type="Button" parent="VBoxContainer/ButtonBar"]
+margin_left = 162.0
+margin_right = 222.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+icon = ExtResource( 4 )
+flat = true
+expand_icon = true
+
+[node name="RightGap" type="MarginContainer" parent="VBoxContainer/ButtonBar"]
+margin_left = 226.0
+margin_right = 231.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 5, 25 )
+
+[node name="Node" type="Node" parent="VBoxContainer/ButtonBar"]
+
+[node name="TextBar2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 150.0
+margin_right = 250.0
+margin_bottom = 230.0
+
+[node name="LeftGap" type="MarginContainer" parent="VBoxContainer/TextBar2"]
+margin_right = 15.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 15, 25 )
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/TextBar2"]
+margin_left = 19.0
+margin_right = 229.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 210, 80 )
+theme = SubResource( 4 )
+wrap_enabled = true
+
+[node name="RightGap" type="MarginContainer" parent="VBoxContainer/TextBar2"]
+margin_left = 233.0
+margin_right = 248.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 15, 25 )
+
+[node name="ButtonBar2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 234.0
+margin_right = 250.0
+margin_bottom = 259.0
+
+[node name="LeftGap" type="MarginContainer" parent="VBoxContainer/ButtonBar2"]
+margin_right = 160.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 160, 25 )
+
+[node name="ButtonText" type="Button" parent="VBoxContainer/ButtonBar2"]
+margin_left = 164.0
+margin_right = 217.0
+margin_bottom = 25.0
+text = "Submit"
+
+[node name="RightGap" type="MarginContainer" parent="VBoxContainer/ButtonBar2"]
+margin_left = 221.0
+margin_right = 226.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 5, 25 )
+
+[node name="CardBack" type="Node2D" parent="."]
+
+[node name="BtnDraw" type="Button" parent="CardBack"]
+margin_right = 250.0
+margin_bottom = 350.0
+disabled = true
+flat = true
+
+[node name="Sprite" type="Sprite" parent="CardBack"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="DoneSprite" type="Sprite" parent="CardBack"]
+visible = false
+texture = ExtResource( 8 )
+centered = false
+
+[connection signal="button_up" from="VBoxContainer/ButtonBar/Button1" to="." method="_on_Button1_button_up"]
+[connection signal="button_up" from="VBoxContainer/ButtonBar/Button2" to="." method="_on_Button2_button_up"]
+[connection signal="button_up" from="VBoxContainer/ButtonBar/Button3" to="." method="_on_Button3_button_up"]
+[connection signal="button_up" from="VBoxContainer/ButtonBar2/ButtonText" to="." method="_on_ButtonText_button_up"]
+[connection signal="button_up" from="CardBack/BtnDraw" to="." method="_on_BtnDraw_button_up"]

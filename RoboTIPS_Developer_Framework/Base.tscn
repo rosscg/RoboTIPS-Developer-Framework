@@ -1,0 +1,617 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://DeckSelector.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Base.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprite_judge.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprite_all.png" type="Texture" id=4]
+[ext_resource path="res://simpleTheme.tres" type="Theme" id=5]
+[ext_resource path="res://assets/card_back.png" type="Texture" id=6]
+[ext_resource path="res://assets/btn_1.png" type="Texture" id=7]
+[ext_resource path="res://CardBase.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprite_business.png" type="Texture" id=9]
+[ext_resource path="res://assets/redArrow3.png" type="Texture" id=10]
+[ext_resource path="res://assets/EmbeddedImage.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite_software.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite_hardware.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFontData" id=23]
+font_path = "res://assets/theme/alegreya-sans.medium.ttf"
+
+[sub_resource type="DynamicFont" id=28]
+size = 30
+use_filter = true
+font_data = SubResource( 23 )
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/theme/alegreya-sans.medium.ttf"
+
+[sub_resource type="DynamicFont" id=16]
+size = 72
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=29]
+font_path = "res://assets/theme/alegreya-sans.medium.ttf"
+
+[sub_resource type="DynamicFont" id=27]
+size = 28
+use_filter = true
+font_data = SubResource( 29 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 48
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=21]
+font_path = "res://assets/theme/alegreya-sans.medium.ttf"
+
+[sub_resource type="DynamicFont" id=22]
+size = 40
+use_filter = true
+font_data = SubResource( 21 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 48
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 28
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 30
+use_filter = true
+font_data = SubResource( 29 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 30
+use_filter = true
+font_data = SubResource( 29 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 72
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 32
+use_filter = true
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 30
+use_filter = true
+font_data = SubResource( 29 )
+
+[sub_resource type="StreamTexture" id=10]
+flags = 4
+load_path = "res://.import/left-arrow.png-dba40b976d75597dca4e8b8a98b7b10b.stex"
+
+[sub_resource type="StreamTexture" id=11]
+flags = 4
+load_path = "res://.import/right-arrow.png-3388a50e60f4bd5025494aba2d1c3a77.stex"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1600.0
+margin_bottom = 900.0
+
+[node name="SurveyButton" type="Button" parent="."]
+margin_left = 1300.0
+margin_top = 40.0
+margin_right = 1560.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 28 )
+text = "Complete Survey"
+
+[node name="HomeScene" type="Node2D" parent="."]
+
+[node name="title_sprite" type="Sprite" parent="HomeScene"]
+position = Vector2( 798, 94 )
+scale = Vector2( 0.400901, 0.400901 )
+texture = ExtResource( 11 )
+
+[node name="text_title" type="Label" parent="HomeScene"]
+visible = false
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 1520.0
+margin_bottom = 160.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "Title"
+align = 1
+
+[node name="text_body" type="Label" parent="HomeScene"]
+visible = false
+margin_left = 80.0
+margin_top = 172.0
+margin_right = 1520.0
+margin_bottom = 543.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 27 )
+text = "This tool – currently still in a prototype version - has been created for robot developers to anticipate potential issues with the design of social robots, and to address concerns as early as possible in the development process, in line with responsible research and innovation. 
+
+Please start by selecting the category or deck that fits best with your role in the robot development process and then answer all the questions contained in the selected deck. You can select more than one category. The deck entitled “general” should be completed by all users.
+
+By clicking on the “summary” button, you’ll be provided with an overview of all your replies. This overview is meant for you only and ideally it should allow you to reflect on how your robot development work is aligned with respect to responsible innovation principles. 
+
+Please note that because we are not storing any data, you must reply to the decks questions in one go (i.e. if you close the app, or disconnect, your answers will be lost)."
+align = 3
+autowrap = true
+
+[node name="text_body2" type="Label" parent="HomeScene"]
+margin_left = 80.0
+margin_top = 188.0
+margin_right = 1520.0
+margin_bottom = 559.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 27 )
+text = "This prototype tool has been created for robot developers to anticipate potential issues with the design of social robots, and to address concerns as early as possible in the development process, in line with responsible research and innovation. 
+
+Please start by selecting the deck(s) that fit best with your role in the robot development process and answer each question card. The “General” deck should be completed by all users. The “Summary” view provides an overview of your responses and allows you to reflect on how your robot development work aligns with responsible innovation principles. 
+
+Please note that data is not stored and therefore answers are lost when closing the window.
+"
+align = 3
+autowrap = true
+
+[node name="Decks" type="Node2D" parent="HomeScene"]
+
+[node name="DeckSelector_general" parent="HomeScene/Decks" instance=ExtResource( 1 )]
+margin_left = 74.0
+margin_top = 523.0
+margin_right = 334.0
+margin_bottom = 873.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="DeckSelector_business" parent="HomeScene/Decks" instance=ExtResource( 1 )]
+margin_left = 364.0
+margin_top = 523.0
+margin_right = 624.0
+margin_bottom = 873.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="DeckSelector_hardware" parent="HomeScene/Decks" instance=ExtResource( 1 )]
+margin_left = 654.0
+margin_top = 523.0
+margin_right = 914.0
+margin_bottom = 873.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="DeckSelector_software" parent="HomeScene/Decks" instance=ExtResource( 1 )]
+margin_left = 944.0
+margin_top = 523.0
+margin_right = 1204.0
+margin_bottom = 873.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="DeckSelector_legal" parent="HomeScene/Decks" instance=ExtResource( 1 )]
+margin_left = 1234.0
+margin_top = 523.0
+margin_right = 1494.0
+margin_bottom = 873.0
+rect_scale = Vector2( 1, 1 )
+
+[node name="label_1" type="Label" parent="HomeScene/Decks"]
+margin_left = 74.0
+margin_top = 533.0
+margin_right = 334.0
+margin_bottom = 592.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "General"
+align = 1
+
+[node name="deck_done" type="Sprite" parent="HomeScene/Decks/label_1"]
+visible = false
+position = Vector2( 210, 300 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="label_2" type="Label" parent="HomeScene/Decks"]
+margin_left = 364.0
+margin_top = 533.0
+margin_right = 624.0
+margin_bottom = 592.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "Business"
+align = 1
+
+[node name="deck_done" type="Sprite" parent="HomeScene/Decks/label_2"]
+visible = false
+position = Vector2( 210, 300 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="label_3" type="Label" parent="HomeScene/Decks"]
+margin_left = 654.0
+margin_top = 533.0
+margin_right = 914.0
+margin_bottom = 592.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "Hardware"
+align = 1
+
+[node name="deck_done" type="Sprite" parent="HomeScene/Decks/label_3"]
+visible = false
+position = Vector2( 210, 300 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="label_4" type="Label" parent="HomeScene/Decks"]
+margin_left = 944.0
+margin_top = 533.0
+margin_right = 1204.0
+margin_bottom = 592.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "Software"
+align = 1
+
+[node name="deck_done" type="Sprite" parent="HomeScene/Decks/label_4"]
+visible = false
+position = Vector2( 210, 300 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="label_5" type="Label" parent="HomeScene/Decks"]
+margin_left = 1234.0
+margin_top = 533.0
+margin_right = 1494.0
+margin_bottom = 592.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "Legal"
+align = 1
+
+[node name="deck_done" type="Sprite" parent="HomeScene/Decks/label_5"]
+visible = false
+position = Vector2( 210, 300 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+
+[node name="tutorial" type="Node2D" parent="HomeScene"]
+
+[node name="Label" type="Label" parent="HomeScene/tutorial"]
+margin_left = 1260.0
+margin_top = 435.0
+margin_right = 1592.0
+margin_bottom = 483.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.917647, 0.231373, 0.231373, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Select a deck to begin"
+
+[node name="Sprite" type="Sprite" parent="HomeScene/tutorial"]
+position = Vector2( 1545, 583 )
+rotation = 2.56389
+scale = Vector2( 0.18, 0.18 )
+texture = ExtResource( 10 )
+flip_v = true
+
+[node name="survey-label" type="Label" parent="HomeScene/tutorial"]
+margin_left = 1079.0
+margin_top = 106.0
+margin_right = 1517.0
+margin_bottom = 154.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.917647, 0.231373, 0.231373, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Complete survey when done"
+
+[node name="survey-sprite" type="Sprite" parent="HomeScene/tutorial"]
+position = Vector2( 1240, 79 )
+rotation = 0.233874
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 10 )
+flip_v = true
+
+[node name="CardScene" type="Node2D" parent="."]
+visible = false
+
+[node name="pos_card" type="Position2D" parent="CardScene"]
+position = Vector2( 620, 160 )
+
+[node name="pos_deck" type="Position2D" parent="CardScene"]
+position = Vector2( 1222, 499 )
+
+[node name="bg_grey_1" type="ColorRect" parent="CardScene"]
+margin_top = 600.0
+margin_right = 1600.0
+margin_bottom = 900.0
+color = Color( 0.627451, 0.627451, 0.627451, 1 )
+
+[node name="bg_grey_2" type="ColorRect" parent="CardScene"]
+margin_top = 600.0
+margin_right = 1600.0
+margin_bottom = 610.0
+color = Color( 0.490196, 0.490196, 0.490196, 1 )
+
+[node name="tutorial" type="Node2D" parent="CardScene"]
+
+[node name="Label" type="Label" parent="CardScene/tutorial"]
+margin_left = 872.0
+margin_top = 342.0
+margin_right = 1139.0
+margin_bottom = 444.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.917647, 0.231373, 0.231373, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Click on deck to draw a card"
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="CardScene/tutorial"]
+position = Vector2( 1098, 518 )
+rotation = -0.0593412
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+
+[node name="tutorial2" type="Node2D" parent="CardScene"]
+
+[node name="Label" type="Label" parent="CardScene/tutorial2"]
+margin_left = 296.0
+margin_top = 309.0
+margin_right = 563.0
+margin_bottom = 411.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.917647, 0.231373, 0.231373, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "View summary of answers"
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="CardScene/tutorial2"]
+position = Vector2( 344, 205 )
+rotation = -4.31969
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="SpriteLegal" type="Sprite" parent="CardScene"]
+visible = false
+position = Vector2( 200, 500 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": "	"
+}
+
+[node name="SpriteGeneral" type="Sprite" parent="CardScene"]
+visible = false
+position = Vector2( 182, 514 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 4 )
+
+[node name="SpriteBusiness" type="Sprite" parent="CardScene"]
+visible = false
+position = Vector2( 200, 500 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 9 )
+
+[node name="SpriteHardware" type="Sprite" parent="CardScene"]
+visible = false
+position = Vector2( 200, 500 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 13 )
+
+[node name="SpriteSoftware" type="Sprite" parent="CardScene"]
+visible = false
+position = Vector2( 280, 496 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 12 )
+
+[node name="text_title" type="Label" parent="CardScene"]
+margin_left = 1204.0
+margin_top = 320.0
+margin_right = 1500.0
+margin_bottom = 379.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Legal"
+align = 1
+
+[node name="text_question_no" type="Label" parent="CardScene"]
+margin_left = 1202.0
+margin_top = 375.0
+margin_right = 1500.0
+margin_bottom = 411.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Question 2 / 20"
+align = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CardScene"]
+margin_left = 1201.0
+margin_top = 417.0
+margin_right = 1501.0
+margin_bottom = 457.0
+step = 1.0
+rounded = true
+percent_visible = false
+
+[node name="draw_deck" type="Node2D" parent="CardScene"]
+
+[node name="Back_Button" type="Button" parent="CardScene"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 220.0
+margin_bottom = 100.0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 24 )
+text = "Back"
+
+[node name="Summary_Button" type="Button" parent="CardScene"]
+margin_left = 250.0
+margin_top = 40.0
+margin_right = 430.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 25 )
+text = "Summary"
+
+[node name="SummaryScene" type="Node2D" parent="."]
+visible = false
+
+[node name="DownloadButton" type="Button" parent="SummaryScene"]
+visible = false
+margin_left = 1010.0
+margin_top = 40.0
+margin_right = 1270.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 28 )
+text = "Download Answers"
+
+[node name="tutorial" type="Node2D" parent="SummaryScene"]
+position = Vector2( 1.52588e-05, 0 )
+z_index = 1
+
+[node name="Label" type="Label" parent="SummaryScene/tutorial"]
+margin_left = 17.0
+margin_top = 540.0
+margin_right = 281.0
+margin_bottom = 690.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.917647, 0.231373, 0.231373, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Click completed cards to review answers."
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="SummaryScene/tutorial"]
+position = Vector2( 191, 700 )
+rotation = -0.932006
+scale = Vector2( 0.18, 0.18 )
+texture = ExtResource( 10 )
+
+[node name="ColorRect" type="ColorRect" parent="SummaryScene/tutorial"]
+margin_left = 413.0
+margin_top = 763.0
+margin_right = 805.0
+margin_bottom = 883.0
+color = Color( 1, 1, 1, 0.866667 )
+
+[node name="Label2" type="Label" parent="SummaryScene/tutorial"]
+margin_left = 470.0
+margin_top = 780.0
+margin_right = 747.0
+margin_bottom = 889.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.917647, 0.231373, 0.231373, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Icons signify answered cards"
+autowrap = true
+
+[node name="Sprite2" type="Sprite" parent="SummaryScene/tutorial"]
+position = Vector2( 440, 798 )
+rotation = -1.41721
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 10 )
+flip_v = true
+
+[node name="Sprite" type="Sprite" parent="SummaryScene"]
+position = Vector2( 140, 375 )
+scale = Vector2( 0.13, 0.13 )
+texture = ExtResource( 6 )
+
+[node name="text_title" type="Label" parent="SummaryScene"]
+margin_left = 80.0
+margin_top = 29.0
+margin_right = 1520.0
+margin_bottom = 116.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 12 )
+text = "Summary"
+align = 1
+
+[node name="text_body3" type="Label" parent="SummaryScene"]
+margin_left = 80.0
+margin_top = 130.0
+margin_right = 1520.0
+margin_bottom = 260.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 27 )
+text = "This page shows all cards in the currently selected deck with answers marked as icons to the right where applicable. The complete card text and answer can be viewed as a tooltip by mousing over the card or in the original format by clicking on an answered card."
+align = 3
+autowrap = true
+
+[node name="deck_label" type="Label" parent="SummaryScene"]
+margin_left = 68.815
+margin_top = 237.0
+margin_right = 210.815
+margin_bottom = 280.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Business"
+align = 1
+
+[node name="summ_deck" type="Node2D" parent="SummaryScene"]
+
+[node name="pos_summ" type="Position2D" parent="SummaryScene"]
+position = Vector2( 272, 230 )
+
+[node name="Summ_Back_Button" type="Button" parent="SummaryScene"]
+margin_left = 250.0
+margin_top = 40.0
+margin_right = 430.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 26 )
+text = "Back"
+
+[node name="CardZoom" type="Node2D" parent="SummaryScene"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="SummaryScene/CardZoom"]
+margin_right = 1600.0
+margin_bottom = 900.0
+color = Color( 0, 0, 0, 0.760784 )
+
+[node name="BackButton" type="Button" parent="SummaryScene/CardZoom"]
+margin_right = 1600.0
+margin_bottom = 900.0
+flat = true
+
+[node name="CardZoomed" parent="SummaryScene/CardZoom" instance=ExtResource( 8 )]
+margin_left = 600.0
+margin_top = 170.0
+margin_right = 850.0
+margin_bottom = 520.0
+rect_scale = Vector2( 1.6, 1.6 )
+
+[node name="LastCardButton" type="Button" parent="SummaryScene/CardZoom"]
+margin_left = 513.0
+margin_top = 423.0
+margin_right = 563.0
+margin_bottom = 473.0
+rect_scale = Vector2( 1.6, 1.6 )
+icon = SubResource( 10 )
+flat = true
+expand_icon = true
+
+[node name="NextCardButton" type="Button" parent="SummaryScene/CardZoom"]
+margin_left = 1016.0
+margin_top = 423.0
+margin_right = 1066.0
+margin_bottom = 473.0
+rect_scale = Vector2( 1.6, 1.6 )
+icon = SubResource( 11 )
+flat = true
+expand_icon = true
+
+[connection signal="button_up" from="SurveyButton" to="." method="_on_SurveyButton_button_up"]
+[connection signal="button_up" from="CardScene/Back_Button" to="." method="_on_Button_button_up"]
+[connection signal="button_up" from="CardScene/Summary_Button" to="." method="_on_Summary_Button_button_up"]
+[connection signal="button_up" from="SummaryScene/DownloadButton" to="." method="_on_DownloadButton_button_up"]
+[connection signal="button_up" from="SummaryScene/Summ_Back_Button" to="." method="_on_Summ_Back_Button_button_up"]
+[connection signal="button_up" from="SummaryScene/CardZoom/BackButton" to="." method="_on_BackButton_button_up"]
+[connection signal="button_up" from="SummaryScene/CardZoom/LastCardButton" to="." method="_on_LastCardButton_button_up"]
+[connection signal="button_up" from="SummaryScene/CardZoom/NextCardButton" to="." method="_on_NextCardButton_button_up"]
